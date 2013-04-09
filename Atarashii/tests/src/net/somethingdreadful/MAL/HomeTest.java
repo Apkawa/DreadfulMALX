@@ -36,12 +36,12 @@ public class HomeTest extends ActivityInstrumentationTestCase2<Home> {
         assertNotNull(activity);
         assertTrue(solo.searchText("ANIME"));
         assertTrue(solo.searchText("MANGA"));
-        solo.clickOnImage(2);
+        solo.clickOnActionBarItem(R.id.action_search);
         assertTrue(solo.searchText("Search in MAL"));
     }
 
     public void testStartSearchAnime() {
-        solo.clickOnImage(2);
+        solo.clickOnActionBarItem(R.id.action_search);
         assertTrue(solo.searchText("Search in MAL"));
         solo.enterText(0, "Minami-ke");
         solo.sendKey(KeyEvent.KEYCODE_ENTER);
@@ -50,7 +50,7 @@ public class HomeTest extends ActivityInstrumentationTestCase2<Home> {
 
     public void testStartSearchManga() {
         solo.clickOnText("MANGA");
-        solo.clickOnImage(2);
+        solo.clickOnActionBarItem(R.id.action_search);
         assertTrue(solo.searchText("Search in MAL"));
         solo.enterText(0, "Otaku no musume-san");
         solo.sendKey(KeyEvent.KEYCODE_ENTER);
